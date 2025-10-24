@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learn English - Demo</title>
+  <style>
+    :root{
+      --accent:#2b8cff;
+      --accent-2:#1e6fd9;
+      --bg:#f6f9ff;
+      --card:#ffffff;
+      --muted:#6b7c93;
+      --radius:10px;
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:var(--bg); color:#0b2540; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* NAVBAR */
+    .nav-wrap{background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+    nav{
+      max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; color:white; text-decoration:none}
+    .logo{
+      width:44px; height:44px; border-radius:8px; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px;
+      box-shadow:0 4px 18px rgba(12,38,80,0.18);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav-links a{color:rgba(255,255,255,0.95); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:8px}
+    .nav-links a:hover{background:rgba(255,255,255,0.08)}
+
+    /* HERO */
+    .hero{
+      max-width:1100px; margin:20px auto; background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 8px 30px rgba(12,38,80,0.08);
+    }
+    .hero-top{display:flex; flex-direction:row; gap:20px; align-items:stretch}
+    .hero-photo{flex:1; min-height:220px; background-image:url('https://picsum.photos/seed/english/1200/600'); background-size:cover; background-position:center}
+    .hero-content{flex:1; padding:28px 28px; display:flex; flex-direction:column; justify-content:center}
+    .hero-content h2{margin:0 0 8px 0; font-size:28px; color:var(--accent-2)}
+    .hero-content p{margin:0 0 16px 0; color:var(--muted); line-height:1.5}
+    .cta-row{display:flex; gap:12px; align-items:center}
+    .btn{background:var(--accent); color:white; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700}
+    .btn.ghost{background:transparent; color:var(--accent-2); border:2px solid var(--accent-2)}
+
+    /* MAIN: lessons + image + text */
+    .main{max-width:1100px; margin:18px auto; display:grid; grid-template-columns:1fr 360px; gap:18px; padding:0 20px}
+    .card{background:var(--card); border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(12,38,80,0.04)}
+    .lesson-title{font-size:18px; color:#0b2540; margin-bottom:12px}
+    .lesson-list{display:flex; flex-direction:column; gap:10px}
+    .lesson-item{padding:10px; border-radius:8px; background:linear-gradient(180deg,#f8fbff,#ffffff); border:1px solid rgba(10,30,60,0.03); display:flex; align-items:center; gap:12px}
+    .lesson-item strong{font-size:15px}
+    .side-image{width:100%; border-radius:8px; display:block}
+
+    /* small footer */
+    footer{max-width:1100px; margin:20px auto; padding:16px 20px; color:var(--muted); font-size:14px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero-top{flex-direction:column}
+      .main{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav-wrap">
+    <nav>
+      <a class="brand" href="#">
+        <div class="logo">EN</div>
+        <div>
+          <h1 style="font-size:16px;margin:0">English Lab</h1>
+          <div style="font-size:12px;opacity:0.9;color:rgba(255,255,255,0.85)">Practice • Learn • Speak</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#practice">Practice</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h2>Learn English with confidence</h2>
+        <p>Hệ thống bài học ngắn, bài tập thực hành và mẹo phát âm giúp bạn tiến bộ nhanh. Dành cho người mới bắt đầu và người muốn nâng cao kỹ năng giao tiếp.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#lessons">Bắt đầu học</a>
+          <a class="btn ghost" href="#practice">Luyện tập &amp; Kiểm tra</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="card">
+      <div class="lesson-title" id="lessons">Bài học nổi bật</div>
+      <div class="lesson-list">
+        <div class="lesson-item">
+          <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">A1</div>
+          <div>
+            <strong>Beginner: Basic Phrases</strong>
+            <div style="font-size:13px;color:var(--muted)">Chào hỏi, giới thiệu, hỏi đường</div>
+          </div>
+        </div>
+
+        <div class="lesson-item">
+          <div style="width:48px;height:48px;border-radius:8px;background:#ffd76b;display:flex;align-items:center;justify-content:center;color:#3b2f00;font-weight:700">A2</div>
+          <div>
+            <strong>Grammar: Present Simple</strong>
+            <div style="font-size:13px;color:var(--muted)">Cấu trúc và bài tập thực hành</div>
+          </div>
+        </div>
+
+        <div class="lesson-item">
+          <div style="width:48px;height:48px;border-radius:8px;background:#9be7a9;display:flex;align-items:center;justify-content:center;color:#08350f;font-weight:700">B1</div>
+          <div>
+            <strong>Speaking: Small Talks</strong>
+            <div style="font-size:13px;color:var(--muted)">Mẫu hội thoại &amp; tips để tự tin trò chuyện</div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin:16px 0;border:none;border-top:1px solid rgba(10,30,60,0.05)" />
+      <p style="margin:0;color:var(--muted);font-size:14px">Mẹo: Học đều đặn 15–20 phút mỗi ngày sẽ hiệu quả hơn học tập trung 2–3 giờ chỉ một lần.</p>
+    </div>
+
+    <aside class="card">
+      <h3 style="margin-top:0">Hãy nhớ từ: <em>and</em></h3>
+      <p style="color:var(--muted)">Từ <strong>"and"</strong> nghĩa là "và" — dùng để nối hai từ, hai mệnh đề hoặc hai ý. Ví dụ: <em>apple and banana</em>.</p>
+
+      <img class="side-image" src="https://picsum.photos/seed/learn/600/400" alt="Học tiếng anh" />
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <a class="btn" href="#">Xem cách dùng "and"</a>
+        <a class="btn ghost" href="#">Bài tập nhanh</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    © 2025 English Lab — Mẫu demo HTML + CSS thuần. Muốn mình thêm biểu mẫu liên hệ, icon, hay đổi tiếng sang English thì nói nhé.
+  </footer>
+</body>
+</html>
